@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Book Library</title>
+</head>
+<body>
+    <form id="userInput" action="/app.js">
+
+        <div id="textInput">
+            <p><input type="text" name="" id="title" placeholder="Title"></p>
+            <p><input type="text" name="" id="author" placeholder="Author"></p>
+            <p> <input type="number" name="" id="pages" placeholder="Pages"></p>
+        </div>
+        <div id="checkBox">
+            <p><label>Read: </label><input type="checkbox" name="" id="status" ></p>
+        </div>
+
+        <button type="submit" form="textInput" id="addBtn">Add</button>
+    </form>
+
+    <div class="bookList"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
