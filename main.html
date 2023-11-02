@@ -7,7 +7,11 @@
     <title>Book Library</title>
 </head>
 <body>
-    <form id="userInput" action="/app.js">
+    <h1 class="header">Virtual Library</h1>
+
+    <button id="openForm">+ Create New</button>
+
+    <form id="form" action="/app.js">
 
         <div id="textInput">
             <p><input type="text" name="" id="title" placeholder="Title"></p>
@@ -21,7 +25,7 @@
         <button type="submit" form="textInput" id="addBtn">Add</button>
     </form>
 
-    <div class="bookList"></div>
+    <div id="bookList"></div>
 
     <script src="app.js"></script>
 </body>

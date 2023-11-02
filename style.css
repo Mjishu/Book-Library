@@ -1,0 +1,31 @@
+*{
+    font-family:Lucida Sans Unicode, Georgia, 'Times New Roman', Times, serif ;
+}
+
+#bookList{
+    
+
+}
+
+input{
+    border: 1px solid black;
+    border-radius: 5px ;
+}
+
+
+button{
+    background-color: aliceblue;
+    color: steelblue;
+    border-radius: 7px;
+    border: 1px solid steelblue;
+    width: 70px;
+}
+
+button:hover{
+    color: aliceblue;
+    background: steelblue;
+}
+
+#openForm{
+    width: auto;
+}
