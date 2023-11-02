@@ -23,6 +23,8 @@ function addToLibrary(){
     updateLibraryDisplay()
 }
 
+
+
 function updateLibraryDisplay(){
     var bookList = document.getElementById("bookList")
     bookList.innerHTML = " "
@@ -30,13 +32,15 @@ function updateLibraryDisplay(){
     for (let i=0;i<myLibrary.length; i++){
         const book = myLibrary[i]
         const bookInfo = document.createElement('p')
-        bookInfo.innerHTML= "Title: " + book.title + " <br> Author: " + book.author + " <br> Pages: " + book.pages + " <br>Status: " + (book.status ? 'Read':'Not Read') +' <br><Button id="delBtn">Delete</Button>'
+        bookInfo.innerHTML= "Title: " + book.title + " <br> Author: " + book.author + " <br> Pages: " + book.pages + " <br>Status: " + (book.status ? 'Read':'Not Read') +' <br><Button id=delBtn_' + i + '>Delete</Button>'
         bookList.appendChild(bookInfo)
 
-        // const delBtn = document.getElementById("delBtn");
-        // delBtn.setAttribute()
+        let delBtn = document.getElementById("delBtn_" + i);
+        delBtn.setAttribute('data-type', i);
     }
 }
+
+
 
 
 const dialog = document.querySelector("dialog");
