@@ -35,19 +35,25 @@ function updateLibraryDisplay(){
         bookInfo.innerHTML= "Title: " + book.title + " <br> Author: " + book.author + " <br> Pages: " + book.pages + " <br>Status: " + (book.status ? 'Read':'Not Read') +' <br><Button id=delBtn_' + i + '>Delete</Button>'
         bookList.appendChild(bookInfo)
 
-        let delBtn = document.getElementById("delBtn_" + i);
+        var delBtn = document.getElementById("delBtn_" + i);
         delBtn.setAttribute('data-type', i);
+        delBtn.addEventListener("click", () => {
+        myLibrary.splice(i,1)
+        // console.table(myLibrary)
+        updateLibraryDisplay()
+})
     }
 }
-
-
 
 
 const dialog = document.querySelector("dialog");
 const openForm = document.getElementById("openForm")
 const Button = document.getElementById("addBtn")
 
+
 // ? How to add remove button?
+
+
 
 openForm.addEventListener("click", () => {
     dialog.showModal();
@@ -63,10 +69,10 @@ Button.addEventListener("click", addToLibrary)
 
 
 //? Place holder for books
-let LOTR = new Book("Lord of the Rings", "George R.R Martin", 156, "read")
+let LOTR = new Book("Lord of the Rings", "George R.R Martin", 156, false)
 myLibrary.push(LOTR)
 
-let poppyWars = new Book("The Poppy Wars", "R.F Kuang", 450, "read") //*leave end empty if you want not read
+let poppyWars = new Book("The Poppy Wars", "R.F Kuang", 450, true) //*leave end empty if you want not read
 myLibrary.push(poppyWars)
 
 updateLibraryDisplay()

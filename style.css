@@ -68,3 +68,7 @@ h2{
     height: 35px;
     width: 120px;
 }
+
+p > button{
+    margin-left: 35%;
+}
