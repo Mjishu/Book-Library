@@ -30,12 +30,30 @@ function updateLibraryDisplay(){
     for (let i=0;i<myLibrary.length; i++){
         const book = myLibrary[i]
         const bookInfo = document.createElement('p')
-        bookInfo.textContent = "Title: " + book.title + " Author: " + book.author + " book.pages: " + book.pages + " status: " + (book.status ? 'Read':'Not Read')
+        bookInfo.innerHTML= "Title: " + book.title + " <br> Author: " + book.author + " <br> Pages: " + book.pages + " <br>Status: " + (book.status ? 'Read':'Not Read') +' <br><Button id="delBtn">Delete</Button>'
         bookList.appendChild(bookInfo)
+
+        // const delBtn = document.getElementById("delBtn");
+        // delBtn.setAttribute()
     }
 }
 
-var Button = document.getElementById("addBtn")
+
+const dialog = document.querySelector("dialog");
+const openForm = document.getElementById("openForm")
+const Button = document.getElementById("addBtn")
+
+// ? How to add remove button?
+
+openForm.addEventListener("click", () => {
+    dialog.showModal();
+})
+
+Button.addEventListener('click', () => {
+     dialog.close();
+})
+
+
 Button.addEventListener("click", addToLibrary)
 
 

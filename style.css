@@ -3,12 +3,20 @@
 }
 
 #bookList{
-    
+    display: flex;
+
+}
+
+#bookList > p { 
+    border: 2px black solid;
+    margin: 25px;
+    padding: 10px;
+    font-size: 20px;
 
 }
 
 input{
-    border: 1px solid black;
+    border: none;
     border-radius: 5px ;
 }
 
@@ -26,6 +34,37 @@ button:hover{
     background: steelblue;
 }
 
+#addBtn{
+    width: 100%;
+}
+
 #openForm{
     width: auto;
+}
+
+::backdrop{
+    background: rgb(132, 134, 131);
+    opacity: .75;
+}
+
+dialog{
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 4px azure;
+    scale: 1.2;
+    background: rgb(201, 197, 197);
+}
+
+h2{
+    margin-left: 2rem;
+}
+
+.header{
+    padding-left: 45%;
+}
+
+#openForm{
+    margin-left: 48%;
+    height: 35px;
+    width: 120px;
 }

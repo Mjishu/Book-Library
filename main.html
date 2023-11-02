@@ -10,20 +10,23 @@
     <h1 class="header">Virtual Library</h1>
 
     <button id="openForm">+ Create New</button>
+    
+    <dialog>
+        <h2>Add Book</h2>
+        <form id="form" action="/app.js">
 
-    <form id="form" action="/app.js">
+            <div id="textInput">
+                <p><input type="text" name="" id="title" placeholder="Title"></p>
+                <p><input type="text" name="" id="author" placeholder="Author"></p>
+                <p> <input type="number" name="" id="pages" placeholder="Pages"></p>
+            </div>
+            <div id="checkBox">
+                <p><label>Read: </label><input type="checkbox" name="" id="status" ></p>
+            </div>
 
-        <div id="textInput">
-            <p><input type="text" name="" id="title" placeholder="Title"></p>
-            <p><input type="text" name="" id="author" placeholder="Author"></p>
-            <p> <input type="number" name="" id="pages" placeholder="Pages"></p>
-        </div>
-        <div id="checkBox">
-            <p><label>Read: </label><input type="checkbox" name="" id="status" ></p>
-        </div>
-
-        <button type="submit" form="textInput" id="addBtn">Add</button>
-    </form>
+            <button type="submit" form="textInput" id="addBtn">Add</button>
+        </form>
+    </dialog>
 
     <div id="bookList"></div>
 
