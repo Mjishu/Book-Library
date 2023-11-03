@@ -28,21 +28,39 @@ function addToLibrary(){
 function updateLibraryDisplay(){
     var bookList = document.getElementById("bookList")
     bookList.innerHTML = " "
+    
 
     for (let i=0;i<myLibrary.length; i++){
         const book = myLibrary[i]
         const bookInfo = document.createElement('p')
-        bookInfo.innerHTML= "Title: " + book.title + " <br> Author: " + book.author + " <br> Pages: " + book.pages + " <br>Status: " + (book.status ? 'Read':'Not Read') +' <br><Button id=delBtn_' + i + '>Delete</Button>'
+        bookInfo.innerHTML= "Title: " + book.title + " <br> Author: " + book.author + " <br> Pages: " + book.pages + " <br>" + "<button id=statusButton_" + i + ">" + (book.status ? 'Read' : 'Not Read') + "</button>" +' <br><button id=delBtn_' + i + '>Delete</button>'
         bookList.appendChild(bookInfo)
 
+        let statusButton = document.getElementById("statusButton_" + i)
+
+        statusButton.addEventListener("click", () => {
+                console.log(i)
+                // console.table(myLibrary)
+                statusToggler(book,statusButton);
+            })  
+
         var delBtn = document.getElementById("delBtn_" + i);
-        delBtn.setAttribute('data-type', i);
         delBtn.addEventListener("click", () => {
-        myLibrary.splice(i,1)
-        // console.table(myLibrary)
-        updateLibraryDisplay()
+            myLibrary.splice(i,1)
+            updateLibraryDisplay()
+
+        console.log(bookInfo)     
 })
     }
+}
+
+//* The return function was the issue...
+function statusToggler(book, statusButton){
+    book.status = !book.status;
+    console.table(myLibrary)
+    statusButton.innerHTML = book.status ? "Read": "Not Read";
+    updateLibraryDisplay()
+    
 }
 
 
@@ -61,6 +79,7 @@ openForm.addEventListener("click", () => {
 
 Button.addEventListener('click', () => {
      dialog.close();
+     updateLibraryDisplay()
 })
 
 
