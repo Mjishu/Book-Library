@@ -1,5 +1,23 @@
+
+/* Come back and change colors maybe */
+:root{
+    --main: #9FB4BA;
+    --secondary: #437281;
+    --third: #45565c;
+    --accent:#f5b776;
+}
+
+
 *{
     font-family:Lucida Sans Unicode, Georgia, 'Times New Roman', Times, serif ;
+    color: #17313a;
+}
+
+body{
+    background-image: linear-gradient( var(--secondary) ,var(--main) 50%);
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #bookList{
@@ -7,11 +25,13 @@
 
 }
 
-#bookList > p { 
-    border: 2px black solid;
+.bookWrapper{ 
+    border: 2px var(--third) solid;
     margin: 25px;
     padding: 10px;
     font-size: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px var(--accent);
 
 }
 
@@ -22,7 +42,7 @@ input{
 
 
 button{
-    background-color: aliceblue;
+    background-color: rgb(217, 222, 226);
     color: steelblue;
     border-radius: 7px;
     border: 1px solid steelblue;
@@ -43,16 +63,16 @@ button:hover{
 }
 
 ::backdrop{
-    background: rgb(132, 134, 131);
+    background: rgb(72, 100, 109);
     opacity: .75;
 }
 
 dialog{
     border: none;
     border-radius: 5px;
-    box-shadow: 0 0 4px azure;
+    box-shadow: 0 0 4px var(--main);
     scale: 1.2;
-    background: rgb(201, 197, 197);
+    background: var(--secondary);
 }
 
 h2{
@@ -69,6 +89,20 @@ h2{
     width: 120px;
 }
 
-p > button{
-    margin-left: 35%;
+.bookWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.delBtn{
+    margin-top: -15px;
+}
+
+.bookWrapper > button{
+    width: 75px;
+}
+
+.statusBtn{
+    margin-bottom: -10px;
 }

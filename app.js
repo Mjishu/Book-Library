@@ -33,7 +33,8 @@ function updateLibraryDisplay(){
     for (let i=0;i<myLibrary.length; i++){
         const book = myLibrary[i]
         const bookInfo = document.createElement('p')
-        bookInfo.innerHTML= "Title: " + book.title + " <br> Author: " + book.author + " <br> Pages: " + book.pages + " <br>" + "<button id=statusButton_" + i + ">" + (book.status ? 'Read' : 'Not Read') + "</button>" +' <br><button id=delBtn_' + i + '>Delete</button>'
+        bookInfo.setAttribute('class', 'bookWrapper')
+        bookInfo.innerHTML= "Title: " + book.title + " <br> Author: " + book.author + " <br> Pages: " + book.pages + " <br>" + "<button class=statusBtn id=statusButton_" + i + ">" + (book.status ? 'Read' : 'Not Read') + "</button>" +' <br><button class=delBtn id=delBtn_' + i + '>Delete</button>'
         bookList.appendChild(bookInfo)
 
         let statusButton = document.getElementById("statusButton_" + i)
